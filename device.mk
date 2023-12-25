@@ -17,10 +17,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_lahaina/sound_trigger_mixer_paths.xml \
     $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_lahaina/sound_trigger_platform_info.xml
 
-# Init
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/init.haydn.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.haydn.rc
-
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
@@ -28,22 +24,12 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # Overlays-RRO
 PRODUCT_PACKAGES += \
-    HaydnCNSettingsProviderOverlay \
-    HaydnCNWifiOverlay \
-    HaydnGLSettingsProviderOverlay \
-    HaydnGLWifiOverlay \
-    HaydnINSettingsProviderOverlay \
-    HaydnINWifiOverlay \
-    HaydnproCNSettingsProviderOverlay \
-    HaydnproCNWifiOverlay
-
-# Refresh Rate
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.surface_flinger.use_content_detection_for_refresh_rate=false
+    ViliSettingsProviderOverlay \
+    ViliWifiOverlay
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Call the proprietary setup
-$(call inherit-product, vendor/xiaomi/haydn/haydn-vendor.mk)
+$(call inherit-product, vendor/xiaomi/vili/vili-vendor.mk)

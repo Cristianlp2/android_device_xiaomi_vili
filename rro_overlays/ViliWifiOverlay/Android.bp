@@ -1,4 +1,4 @@
 runtime_resource_overlay {
-    name: "HaydnINSettingsProviderOverlay",
+    name: "ViliWifiOverlay",
     vendor: true
 }
